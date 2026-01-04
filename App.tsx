@@ -244,7 +244,7 @@ const Pricing = () => (
             <div>
               <span className="text-blue-600 font-bold uppercase text-xs tracking-widest mb-4 inline-block">Professional Implementation</span>
               <h3 className="text-3xl font-black text-gray-900 mb-2">Code Implementation</h3>
-              <div className="text-3xl font-black text-blue-600 mb-6 italic">₦30,000 - ₦50,000</div>
+              <div className="text-3xl font-black text-blue-600 mb-6 italic">₦50,000 - ₦100,000</div>
               
               <p className="text-gray-600 mb-8 leading-relaxed">
                 Our core service provides a fully functional project built to academic standards. Pricing varies based on the technical complexity and scope discussed.
