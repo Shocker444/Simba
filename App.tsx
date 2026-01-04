@@ -16,6 +16,7 @@ import {
   X,
   Plus
 } from 'lucide-react';
+import { Analytics } from "@vercel/analytics/react"
 
 // --- Shared Utility ---
 const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string, closeMenu?: () => void) => {
@@ -631,6 +632,8 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+
+      <Analytics />
     </div>
   );
 }
