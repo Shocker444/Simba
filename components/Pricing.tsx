@@ -29,8 +29,6 @@ const Pricing = () => {
         "Everything in Advanced",
         "Dataset sourcing & preprocessing",
         "Chapter 4 & 5 fully written",
-        "Plagiarism-checked documentation",
-        "Presentation slides included",
         "Defense coaching session",
         "Revisions based on supervisor feedback"
       ],
