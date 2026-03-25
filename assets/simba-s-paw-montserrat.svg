@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="32" height="32">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100" height="100" rx="22" fill="url(#bg)"/>
+
+  <!-- S in Montserrat Bold -->
+  <text
+    x="46"
+    y="76"
+    text-anchor="middle"
+    font-family="Montserrat, 'Arial Rounded MT Bold', Arial, sans-serif"
+    font-size="62"
+    font-weight="700"
+    fill="white"
+  >S</text>
+
+  <!-- Paw print — top right -->
+  <!-- Main pad -->
+  <ellipse cx="76" cy="26" rx="6" ry="5" fill="white" opacity="0.95"/>
+  <!-- Four toe pads -->
+  <ellipse cx="67" cy="18" rx="3.2" ry="2.8" fill="white" opacity="0.95"/>
+  <ellipse cx="76" cy="15" rx="3.2" ry="2.8" fill="white" opacity="0.95"/>
+  <ellipse cx="85" cy="18" rx="3.2" ry="2.8" fill="white" opacity="0.95"/>
+  <ellipse cx="88" cy="27" rx="2.8" ry="3.2" fill="white" opacity="0.95"/>
+
+</svg>
