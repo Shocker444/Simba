@@ -3,7 +3,7 @@ import { CheckCircle, MessageCircle, Plus } from 'lucide-react';
 
 const Contact = () => {
   const availableServices = [
-    "Advanced Tier (₦70k - ₦100k)",
+    "Basic Tier (₦70k - ₦100k)",
     "Premium Tier (₦100k - ₦150k)",
     "Elite Tier (₦150k - ₦200k)",
     "Express Delivery Add-on",
@@ -113,6 +113,17 @@ const Contact = () => {
                     value={formData.project}
                     onChange={e => setFormData({...formData, project: e.target.value})}
                     placeholder="e.g. AI Fraud Detection"
+                    className="w-full px-4 py-4 rounded-2xl border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all" 
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wider">Institution</label>
+                  <input 
+                    type="text" 
+                    required
+                    value={formData.institution}
+                    onChange={e => setFormData({...formData, institution: e.target.value})}
+                    placeholder="e.g. Landmark University"
                     className="w-full px-4 py-4 rounded-2xl border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all" 
                   />
                 </div>
