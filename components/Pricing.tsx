@@ -5,7 +5,7 @@ import { handleScroll } from '../utils/handleScroll';
 const Pricing = () => {
   const tiers = [
     {
-      name: "Advanced",
+      name: "Basic",
       price: "₦70k - ₦100k",
       positioning: "For students who want to deeply understand and optimize their project.",
       valueProp: "Master your defense with deep understanding.",
@@ -26,7 +26,7 @@ const Pricing = () => {
       positioning: "For students who want guaranteed academic success and full documentation.",
       valueProp: "Your project will stand out. Complete academic success.",
       features: [
-        "Everything in Advanced",
+        "Everything in Basic",
         "Dataset sourcing & preprocessing",
         "Chapter 4 & 5 fully written",
         "Defense coaching session",
