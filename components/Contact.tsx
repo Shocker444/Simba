@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { CheckCircle, MessageCircle, Plus } from 'lucide-react';
 
 const Contact = () => {
-  const availableServices = [
+  const availableTiers = [
     "Basic Tier (₦70k - ₦100k)",
     "Premium Tier (₦100k - ₦150k)",
-    "Elite Tier (₦150k - ₦200k)",
+    "Elite Tier (₦150k - ₦200k)"
+  ];
+
+  const availableAddons = [
     "Express Delivery Add-on",
     "Custom UI Dashboard Add-on",
     "Topic Guidance"
@@ -14,18 +17,27 @@ const Contact = () => {
   const [formData, setFormData] = useState({ 
     name: '', 
     project: '', 
-    selectedServices: [] as string[], 
+    institution: '',
+    selectedTier: '', 
+    selectedAddons: [] as string[], 
     message: '' 
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const toggleService = (service: string) => {
+  const selectTier = (tier: string) => {
+    setFormData(prev => ({
+      ...prev,
+      selectedTier: prev.selectedTier === tier ? '' : tier
+    }));
+  };
+
+  const toggleAddon = (addon: string) => {
     setFormData(prev => {
-      const isSelected = prev.selectedServices.includes(service);
-      const nextServices = isSelected 
-        ? prev.selectedServices.filter(s => s !== service)
-        : [...prev.selectedServices, service];
-      return { ...prev, selectedServices: nextServices };
+      const isSelected = prev.selectedAddons.includes(addon);
+      const nextAddons = isSelected 
+        ? prev.selectedAddons.filter(a => a !== addon)
+        : [...prev.selectedAddons, addon];
+      return { ...prev, selectedAddons: nextAddons };
     });
   };
 
@@ -34,13 +46,18 @@ const Contact = () => {
     setIsSubmitting(true);
     
     const subject = encodeURIComponent(`New Project Inquiry: ${formData.project}`);
-    const servicesString = formData.selectedServices.length > 0 
-      ? formData.selectedServices.join(', ') 
+    const servicesList = [];
+    if (formData.selectedTier) servicesList.push(formData.selectedTier);
+    if (formData.selectedAddons.length > 0) servicesList.push(...formData.selectedAddons);
+
+    const servicesString = servicesList.length > 0 
+      ? servicesList.join(', ') 
       : 'No specific services selected';
       
     const body = encodeURIComponent(
       `Name: ${formData.name}\n` +
       `Project Topic: ${formData.project}\n` +
+      `Institution: ${formData.institution}\n` +
       `Services Needed: ${servicesString}\n\n` +
       `Additional Message: ${formData.message}`
     );
@@ -130,24 +147,47 @@ const Contact = () => {
               </div>
               
               <div>
-                <label className="block text-sm font-bold text-gray-700 mb-4 uppercase tracking-wider">Services Needed (Multi-select)</label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {availableServices.map((service) => (
+                <label className="block text-sm font-bold text-gray-700 mb-4 uppercase tracking-wider">Pricing Tier (Select One)</label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
+                  {availableTiers.map((tier) => (
                     <button
-                      key={service}
+                      key={tier}
                       type="button"
-                      onClick={() => toggleService(service)}
+                      onClick={() => selectTier(tier)}
                       className={`text-left px-4 py-3 rounded-xl border text-sm font-medium transition-all flex items-center justify-between group ${
-                        formData.selectedServices.includes(service)
+                        formData.selectedTier === tier
                           ? 'border-blue-600 bg-blue-50 text-blue-700 ring-2 ring-blue-100'
                           : 'border-gray-100 bg-gray-50 text-gray-600 hover:border-blue-200'
                       }`}
                     >
-                      {service}
-                      {formData.selectedServices.includes(service) ? (
-                        <CheckCircle size={16} className="text-blue-600" />
+                      <span className="truncate pr-2">{tier}</span>
+                      {formData.selectedTier === tier ? (
+                        <CheckCircle size={16} className="text-blue-600 shrink-0" />
                       ) : (
-                        <Plus size={16} className="text-gray-300 group-hover:text-blue-300" />
+                        <Plus size={16} className="text-gray-300 group-hover:text-blue-300 shrink-0" />
+                      )}
+                    </button>
+                  ))}
+                </div>
+
+                <label className="block text-sm font-bold text-gray-700 mb-4 uppercase tracking-wider">Add-ons (Optional Multi-select)</label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {availableAddons.map((addon) => (
+                    <button
+                      key={addon}
+                      type="button"
+                      onClick={() => toggleAddon(addon)}
+                      className={`text-left px-4 py-3 rounded-xl border text-sm font-medium transition-all flex items-center justify-between group ${
+                        formData.selectedAddons.includes(addon)
+                          ? 'border-blue-600 bg-blue-50 text-blue-700 ring-2 ring-blue-100'
+                          : 'border-gray-100 bg-gray-50 text-gray-600 hover:border-blue-200'
+                      }`}
+                    >
+                      <span className="truncate pr-2">{addon}</span>
+                      {formData.selectedAddons.includes(addon) ? (
+                        <CheckCircle size={16} className="text-blue-600 shrink-0" />
+                      ) : (
+                        <Plus size={16} className="text-gray-300 group-hover:text-blue-300 shrink-0" />
                       )}
                     </button>
                   ))}

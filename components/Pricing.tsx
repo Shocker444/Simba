@@ -48,7 +48,6 @@ const Pricing = () => {
         "Research formatting (IEEE/APA)",
         "GitHub portfolio setup",
         "Weekly updates & Priority delivery",
-        "Direct WhatsApp support",
         "Full mock defense preparation"
       ],
       buttonClass: "bg-gray-900 text-white hover:bg-gray-800",
@@ -126,7 +125,7 @@ const Pricing = () => {
                 { name: "Express Delivery (72 Hours)", price: "₦30,000", desc: "Jump the queue and get your project delivered in record time." },
                 { name: "Custom UI Dashboard", price: "₦25,000", desc: "Interactive Streamlit or React dashboard for your model." },
                 { name: "Extra Revisions", price: "₦10,000/round", desc: "Additional rounds of revisions beyond the included scope." },
-                { name: "Plagiarism Report Certificate", price: "₦5,000", desc: "Official Turnitin or similar plagiarism report for your docs." }
+                { name: "Plagiarism Report Certificate", price: "₦30,000", desc: "Official Turnitin or similar plagiarism report for your docs." }
               ].map((addon, i) => (
                 <div key={i} className="p-5 rounded-2xl bg-gray-50 border border-gray-100 hover:border-blue-200 transition-colors">
                   <div className="flex justify-between items-start mb-2">
