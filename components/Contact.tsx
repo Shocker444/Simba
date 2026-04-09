@@ -46,7 +46,7 @@ const Contact = () => {
     );
     
     setTimeout(() => {
-      window.location.href = `mailto:essetdonald617@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:simbaworkng@gmail.com?subject=${subject}&body=${body}`;
       setIsSubmitting(false);
     }, 800);
   };
@@ -84,7 +84,7 @@ const Contact = () => {
             </div>
 
             <div className="mt-12 flex flex-col sm:flex-row gap-4">
-                <a href="https://wa.me/your-whatsapp-link" target="_blank" className="flex items-center justify-center bg-green-500 text-white px-8 py-4 rounded-2xl font-bold hover:bg-green-600 transition-all shadow-lg shadow-green-100 active:scale-95">
+                <a href="https://wa.me/2347069478460?text=Hello,%20I'm%20interested%20in%20your%20Simba%20services!" target="_blank" className="flex items-center justify-center bg-green-500 text-white px-8 py-4 rounded-2xl font-bold hover:bg-green-600 transition-all shadow-lg shadow-green-100 active:scale-95">
                   <MessageCircle className="mr-2" size={20} /> Chat on WhatsApp
                 </a>
             </div>
