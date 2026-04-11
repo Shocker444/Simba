@@ -6,6 +6,7 @@ import Services from './components/Services';
 import Pricing from './components/Pricing';
 import HowItWorks from './components/HowItWorks';
 import WhyChooseUs from './components/WhyChooseUs';
+import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -22,6 +23,7 @@ export default function App() {
         <Pricing />
         <HowItWorks />
         <WhyChooseUs />
+        <Testimonials />
         <FAQ />
         <Contact />
       </main>
