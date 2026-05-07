@@ -80,4 +80,4 @@ Simba/
 
 ---
 
-*Note: The site is currently under maintenance. Access to the main content is restricted via the `UnderConstructionPopup` component.*
+*Note: The site is currently under maintenance. Access to the main content is restricted.*
