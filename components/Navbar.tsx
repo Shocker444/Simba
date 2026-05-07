@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { handleScroll } from '../utils/handleScroll';
 
 const Navbar = () => {
@@ -30,6 +31,12 @@ const Navbar = () => {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-10 items-center text-sm font-semibold">
+            <Link 
+              to="/developer-sign-in"
+              className="text-sm font-bold text-gray-500 hover:text-blue-600 transition-colors py-2 relative group"
+            >
+              Developer Portal
+            </Link>
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
@@ -80,6 +87,13 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
+          <Link 
+            to="/developer-sign-in"
+            onClick={() => setIsOpen(false)}
+            className="block px-4 py-4 text-gray-800 hover:bg-blue-50 rounded-2xl transition-colors font-bold text-lg border-b border-gray-50"
+          >
+            Developer Portal
+          </Link>
           <div className="pt-4">
             <a 
               href="#contact" 

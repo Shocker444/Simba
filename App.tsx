@@ -1,34 +1,29 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import Pricing from './components/Pricing';
-import HowItWorks from './components/HowItWorks';
-import WhyChooseUs from './components/WhyChooseUs';
-import Testimonials from './components/Testimonials';
-import FAQ from './components/FAQ';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
-import { Analytics } from "@vercel/analytics/react"
+import Home from './pages/Home';
+import DeveloperSignIn from './pages/DeveloperSignIn';
+import UnderConstructionPopup from './components/UnderConstructionPopup';
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App() {
   return (
-    <div className="min-h-screen selection:bg-blue-100 selection:text-blue-900 overflow-x-hidden">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <Pricing />
-        <HowItWorks />
-        <WhyChooseUs />
-        <Testimonials />
-        <FAQ />
-        <Contact />
-      </main>
-      <Footer />
-      <Analytics />
-    </div>
+    <BrowserRouter>
+      <div className="min-h-screen selection:bg-blue-100 selection:text-blue-900 overflow-x-hidden flex flex-col">
+        <UnderConstructionPopup />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Navbar />
+              <Home />
+              <Footer />
+            </>
+          } />
+          <Route path="/developer-sign-in" element={<DeveloperSignIn />} />
+        </Routes>
+        <Analytics />
+      </div>
+    </BrowserRouter>
   );
 }
